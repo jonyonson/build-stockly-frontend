@@ -24,8 +24,11 @@ function SearchBar({ makeSearchSelection }) {
 
   useEffect(() => {
     if (matches.length > 0) {
-      // const flt = matches.filter(match => !match['1. symbol'].includes('.'));
-      setSuggestions(matches);
+      const matchesToDisplay = matches.filter(
+        match => !match['1. symbol'].includes('.')
+      );
+
+      setSuggestions(matchesToDisplay);
     }
   }, [matches]);
 
